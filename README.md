@@ -11,29 +11,29 @@
     <img src="https://img.shields.io/badge/Caikit-008080?style=for-the-badge&logo=caikit&logoColor=white">
 </div>
 
-## **Analisis Sentimen Menggunakan Caikit dan Hugging Face**
+## Analisis Sentimen Menggunakan Caikit dan Hugging Face
 
-### **Pendahuluan**
+## 🎯 Pendahuluan
 Analisis sentimen merupakan teknik untuk mengidentifikasi dan mengklasifikasikan opini dalam teks sebagai positif, negatif, atau netral. Teknik ini banyak digunakan dalam berbagai aplikasi seperti ulasan produk, pemantauan media sosial, dan analisis umpan balik pelanggan.
 
 Dalam konteks ini, kita menggunakan **Hugging Face** dan **Caikit** untuk melakukan analisis sentimen. **Hugging Face** menyediakan model-model transformer yang telah dilatih sebelumnya, sementara **Caikit** adalah pustaka yang berfokus pada penggunaan model berbasis AI dalam aplikasi praktis.
 
-### **Langkah-Langkah dalam Analisis Sentimen**
+## 🚀 Langkah-Langkah dalam Analisis Sentimen
 
 #### **Pemilihan Model**
-Hugging Face menawarkan banyak model pra-latih yang dapat digunakan untuk analisis sentimen. Salah satunya adalah `distilbert-base-uncased-finetuned-sst-2-english`, yang telah dilatih khusus untuk memprediksi sentimen dari teks berbahasa Inggris. Model ini menggunakan arsitektur **DistilBERT**, yang merupakan versi lebih ringan dari BERT, namun tetap mempertahankan kinerja yang baik dalam tugas-tugas NLP (Natural Language Processing).
+- Hugging Face menawarkan banyak model pra-latih yang dapat digunakan untuk analisis sentimen. Salah satunya adalah `distilbert-base-uncased-finetuned-sst-2-english`, yang telah dilatih khusus untuk memprediksi sentimen dari teks berbahasa Inggris. Model ini menggunakan arsitektur **DistilBERT**, yang merupakan versi lebih ringan dari BERT, namun tetap mempertahankan kinerja yang baik dalam tugas-tugas NLP (Natural Language Processing).
 
 #### **Tokenisasi Teks**
-Sebelum model dapat memproses teks, teks tersebut harus melalui proses **tokenisasi**. Tokenisasi adalah proses di mana teks diubah menjadi bentuk numerik yang dapat dipahami oleh model. Setiap kata atau potongan kata diubah menjadi token yang kemudian diubah menjadi tensor (array multidimensi) yang dapat diproses oleh model.
+- Sebelum model dapat memproses teks, teks tersebut harus melalui proses **tokenisasi**. Tokenisasi adalah proses di mana teks diubah menjadi bentuk numerik yang dapat dipahami oleh model. Setiap kata atau potongan kata diubah menjadi token yang kemudian diubah menjadi tensor (array multidimensi) yang dapat diproses oleh model.
 
 #### **Prediksi Model**
-Model akan menghasilkan output berupa **logits**, yaitu skor mentah yang menunjukkan sejauh mana teks tersebut memiliki kecenderungan ke arah sentimen positif atau negatif.
+- Model akan menghasilkan output berupa **logits**, yaitu skor mentah yang menunjukkan sejauh mana teks tersebut memiliki kecenderungan ke arah sentimen positif atau negatif.
 
 #### **Probabilitas dan Softmax**
-Untuk memudahkan interpretasi hasil, skor logits tersebut diubah menjadi probabilitas menggunakan fungsi **softmax**. Fungsi ini mengubah skor mentah menjadi angka antara 0 dan 1, yang menggambarkan seberapa besar kemungkinan teks tersebut termasuk dalam masing-masing kategori sentimen.
+- Untuk memudahkan interpretasi hasil, skor logits tersebut diubah menjadi probabilitas menggunakan fungsi **softmax**. Fungsi ini mengubah skor mentah menjadi angka antara 0 dan 1, yang menggambarkan seberapa besar kemungkinan teks tersebut termasuk dalam masing-masing kategori sentimen.
 
 #### **Penentuan Sentimen**
-Berdasarkan probabilitas yang dihasilkan, sentimen akhirnya diputuskan. Jika probabilitas untuk kategori positif lebih besar daripada negatif, maka teks dianggap memiliki sentimen positif. Sebaliknya, jika probabilitas untuk kategori negatif lebih tinggi, maka teks dianggap memiliki sentimen negatif.
+- Berdasarkan probabilitas yang dihasilkan, sentimen akhirnya diputuskan. Jika probabilitas untuk kategori positif lebih besar daripada negatif, maka teks dianggap memiliki sentimen positif. Sebaliknya, jika probabilitas untuk kategori negatif lebih tinggi, maka teks dianggap memiliki sentimen negatif.
 
 ### **Contoh Penggunaan**
 Misalnya, kita ingin menganalisis dua kalimat:
@@ -42,9 +42,7 @@ Misalnya, kita ingin menganalisis dua kalimat:
 
 Model akan menganalisis teks-teks ini dan menentukan bahwa kalimat pertama memiliki sentimen positif dengan tingkat keyakinan yang tinggi, sementara kalimat kedua memiliki sentimen negatif dengan tingkat keyakinan yang tinggi.
 
----
-
-### **Kelebihan dan Kekurangan**
+## 📝 Kelebihan dan Kekurangan
 
 #### **Kelebihan**
 - **Efisiensi**: Model transformer seperti **DistilBERT** dapat memberikan hasil yang sangat cepat dan akurat dengan sedikit usaha. Hugging Face menyediakan model yang sudah dilatih sebelumnya sehingga pengguna tidak perlu melatih model dari awal.
@@ -59,7 +57,5 @@ Model akan menganalisis teks-teks ini dan menentukan bahwa kalimat pertama memil
 - **Menambahkan Kategori Sentimen Netral**: Untuk analisis yang lebih mendalam, kita dapat mengembangkan model yang mampu mendeteksi sentimen netral selain hanya positif dan negatif. Ini bisa dilakukan dengan menggunakan model yang lebih kompleks atau melatih model baru dengan data yang lebih beragam.
 - **Pemrosesan Batch**: Dalam penggunaan dunia nyata, sering kali kita perlu menganalisis sejumlah besar teks. Memodifikasi sistem untuk mendukung analisis dalam batch (sekumpulan teks sekaligus) dapat meningkatkan efisiensi dan menghemat waktu.
 
----
-
-### **Kesimpulan**
+## 📌 Kesimpulan
 Analisis sentimen menggunakan **Hugging Face** dan **Caikit** adalah solusi efektif dan mudah digunakan untuk memproses teks dan menilai emosi atau opini di baliknya. Model pre-trained seperti **DistilBERT** memungkinkan kita untuk langsung mulai menganalisis teks tanpa perlu melatih model dari awal. Meski demikian, untuk aplikasi yang lebih spesifik, seperti deteksi sentimen netral atau analisis dalam bahasa selain Inggris, penyesuaian dan pengembangan lebih lanjut mungkin diperlukan.
